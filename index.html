@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — UI/UX Product Designer • AI Creative • Data &amp; Excel Specialist</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                    colors: {
+                        navy: {
+                            950: '#070B14',
+                            900: '#0A0F1D',
+                            850: '#0F172A',
+                            800: '#162038',
+                            700: '#1E293B',
+                        },
+                        sky: {
+                            400: '#38BDF8',
+                            500: '#0EA5E9',
+                        },
+                        electric: {
+                            500: '#3B82F6',
+                            600: '#2563EB',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0A0F1D;
+            color: #F8FAFC;
+            overflow-x: hidden;
+        }
+
+        /* Subtle background grid pattern */
+        .bg-grid {
+            background-size: 48px 48px;
+            background-image: 
+                linear-gradient(to right, rgba(30, 41, 59, 0.35) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(30, 41, 59, 0.35) 1px, transparent 1px);
+        }
+
+        /* Glassmorphic Card Styling */
+        .glass-card {
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(30, 41, 59, 0.9);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 20px 40px -15px rgba(2, 6, 23, 0.7), 0 0 25px -5px rgba(56, 189, 248, 0.12);
+            transform: translateY(-2px);
+        }
+
+        /* Customize Mode Visual Cues */
+        body.customize-active [data-editable] {
+            outline: 1.5px dashed #38BDF8;
+            outline-offset: 4px;
+            border-radius: 6px;
+            background-color: rgba(56, 189, 248, 0.08);
+            cursor: text;
+            transition: all 0.2s ease;
+        }
+
+        body.customize-active [data-editable]:focus {
+            outline: 2px solid #38BDF8;
+            background-color: rgba(56, 189, 248, 0.15);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0A0F1D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1E293B;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+
+        /* Print optimization */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            body {
+                background-color: #0A0F1D !important;
+                color: #F8FAFC !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:Inter, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.bottom-0{bottom:0px}.bottom-5{bottom:1.25rem}.left-1\/2{left:50%}.left-1\/4{left:25%}.left-3{left:0.75rem}.right-1\/4{right:25%}.right-5{right:1.25rem}.top-0{top:0px}.top-24{top:6rem}.top-3{top:0.75rem}.top-5{top:1.25rem}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.my-8{margin-top:2rem;margin-bottom:2rem}.mb-1{margin-bottom:0.25rem}.mb-1\.5{margin-bottom:0.375rem}.mb-12{margin-bottom:3rem}.mb-14{margin-bottom:3.5rem}.mb-2{margin-bottom:0.5rem}.mb-2\.5{margin-bottom:0.625rem}.mb-3{margin-bottom:0.75rem}.mb-5{margin-bottom:1.25rem}.mb-6{margin-bottom:1.5rem}.ml-0\.5{margin-left:0.125rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.mt-3\.5{margin-top:0.875rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.block{display:block}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-0{height:0px}.h-1\.5{height:0.375rem}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-12{height:3rem}.h-14{height:3.5rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-56{height:14rem}.h-6{height:1.5rem}.h-7{height:1.75rem}.h-8{height:2rem}.h-9{height:2.25rem}.h-96{height:24rem}.h-full{height:100%}.w-0{width:0px}.w-10{width:2.5rem}.w-12{width:3rem}.w-2{width:0.5rem}.w-2\/3{width:66.666667%}.w-3{width:0.75rem}.w-3\/4{width:75%}.w-4{width:1rem}.w-44{width:11rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-9{width:2.25rem}.w-96{width:24rem}.w-\[92\%\]{width:92%}.w-full{width:100%}.max-w-2xl{max-width:42rem}.max-w-3xl{max-width:48rem}.max-w-7xl{max-width:80rem}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-x-full{--tw-translate-x:100%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.translate-y-2{--tw-translate-y:0.5rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes ping{75%, 100%{transform:scale(2);opacity:0}}.animate-ping{animation:ping 1s cubic-bezier(0, 0, 0.2, 1) infinite}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.items-stretch{align-items:stretch}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-3\.5{gap:0.875rem}.gap-4{gap:1rem}.gap-5{gap:1.25rem}.gap-6{gap:1.5rem}.gap-7{gap:1.75rem}.gap-8{gap:2rem}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-2\.5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.625rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.625rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-5 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.25rem * var(--tw-space-y-reverse))}.space-y-6 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1.5rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.scroll-smooth{scroll-behavior:smooth}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded{border-radius:0.25rem}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-md{border-radius:0.375rem}.rounded-xl{border-radius:0.75rem}.rounded-t{border-top-left-radius:0.25rem;border-top-right-radius:0.25rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-b-\[4px\]{border-bottom-width:4px}.border-l-\[7px\]{border-left-width:7px}.border-t{border-top-width:1px}.border-t-\[4px\]{border-top-width:4px}.border-electric-500\/30{border-color:rgb(59 130 246 / 0.3)}.border-emerald-400\/25{border-color:rgb(52 211 153 / 0.25)}.border-emerald-400\/30{border-color:rgb(52 211 153 / 0.3)}.border-navy-700{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.border-navy-700\/80{border-color:rgb(30 41 59 / 0.8)}.border-navy-800{--tw-border-opacity:1;border-color:rgb(22 32 56 / var(--tw-border-opacity, 1))}.border-navy-800\/80{border-color:rgb(22 32 56 / 0.8)}.border-sky-400{--tw-border-opacity:1;border-color:rgb(56 189 248 / var(--tw-border-opacity, 1))}.border-sky-400\/20{border-color:rgb(56 189 248 / 0.2)}.border-sky-400\/30{border-color:rgb(56 189 248 / 0.3)}.border-sky-400\/40{border-color:rgb(56 189 248 / 0.4)}.border-sky-400\/50{border-color:rgb(56 189 248 / 0.5)}.border-b-transparent{border-bottom-color:transparent}.border-l-sky-400{--tw-border-opacity:1;border-left-color:rgb(56 189 248 / var(--tw-border-opacity, 1))}.border-t-transparent{border-top-color:transparent}.bg-electric-500\/10{background-color:rgb(59 130 246 / 0.1)}.bg-electric-500\/15{background-color:rgb(59 130 246 / 0.15)}.bg-electric-500\/50{background-color:rgb(59 130 246 / 0.5)}.bg-electric-500\/60{background-color:rgb(59 130 246 / 0.6)}.bg-electric-500\/70{background-color:rgb(59 130 246 / 0.7)}.bg-electric-600{--tw-bg-opacity:1;background-color:rgb(37 99 235 / var(--tw-bg-opacity, 1))}.bg-electric-600\/15{background-color:rgb(37 99 235 / 0.15)}.bg-emerald-400\/10{background-color:rgb(52 211 153 / 0.1)}.bg-emerald-400\/80{background-color:rgb(52 211 153 / 0.8)}.bg-emerald-500\/10{background-color:rgb(16 185 129 / 0.1)}.bg-navy-700{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-navy-800{--tw-bg-opacity:1;background-color:rgb(22 32 56 / var(--tw-bg-opacity, 1))}.bg-navy-800\/80{background-color:rgb(22 32 56 / 0.8)}.bg-navy-850{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-navy-850\/50{background-color:rgb(15 23 42 / 0.5)}.bg-navy-850\/70{background-color:rgb(15 23 42 / 0.7)}.bg-navy-850\/90{background-color:rgb(15 23 42 / 0.9)}.bg-navy-850\/95{background-color:rgb(15 23 42 / 0.95)}.bg-navy-900{--tw-bg-opacity:1;background-color:rgb(10 15 29 / var(--tw-bg-opacity, 1))}.bg-navy-900\/80{background-color:rgb(10 15 29 / 0.8)}.bg-navy-900\/90{background-color:rgb(10 15 29 / 0.9)}.bg-navy-950{--tw-bg-opacity:1;background-color:rgb(7 11 20 / var(--tw-bg-opacity, 1))}.bg-navy-950\/60{background-color:rgb(7 11 20 / 0.6)}.bg-navy-950\/80{background-color:rgb(7 11 20 / 0.8)}.bg-navy-950\/85{background-color:rgb(7 11 20 / 0.85)}.bg-navy-950\/90{background-color:rgb(7 11 20 / 0.9)}.bg-sky-400{--tw-bg-opacity:1;background-color:rgb(56 189 248 / var(--tw-bg-opacity, 1))}.bg-sky-400\/10{background-color:rgb(56 189 248 / 0.1)}.bg-sky-400\/15{background-color:rgb(56 189 248 / 0.15)}.bg-sky-400\/20{background-color:rgb(56 189 248 / 0.2)}.bg-sky-400\/30{background-color:rgb(56 189 248 / 0.3)}.bg-sky-400\/40{background-color:rgb(56 189 248 / 0.4)}.bg-sky-400\/50{background-color:rgb(56 189 248 / 0.5)}.bg-sky-400\/70{background-color:rgb(56 189 248 / 0.7)}.bg-sky-400\/80{background-color:rgb(56 189 248 / 0.8)}.bg-slate-600{--tw-bg-opacity:1;background-color:rgb(71 85 105 / var(--tw-bg-opacity, 1))}.bg-slate-700{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.bg-gradient-to-br{background-image:linear-gradient(to bottom right, var(--tw-gradient-stops))}.bg-gradient-to-r{background-image:linear-gradient(to right, var(--tw-gradient-stops))}.from-navy-800{--tw-gradient-from:#162038 var(--tw-gradient-from-position);--tw-gradient-to:rgb(22 32 56 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-400{--tw-gradient-from:#38BDF8 var(--tw-gradient-from-position);--tw-gradient-to:rgb(56 189 248 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.from-sky-400\/20{--tw-gradient-from:rgb(56 189 248 / 0.2) var(--tw-gradient-from-position);--tw-gradient-to:rgb(56 189 248 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.via-navy-900{--tw-gradient-to:rgb(10 15 29 / 0)  var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), #0A0F1D var(--tw-gradient-via-position), var(--tw-gradient-to)}.to-electric-500{--tw-gradient-to:#3B82F6 var(--tw-gradient-to-position)}.to-electric-600{--tw-gradient-to:#2563EB var(--tw-gradient-to-position)}.to-electric-600\/20{--tw-gradient-to:rgb(37 99 235 / 0.2) var(--tw-gradient-to-position)}.to-navy-950{--tw-gradient-to:#070B14 var(--tw-gradient-to-position)}.bg-clip-text{-webkit-background-clip:text;background-clip:text}.p-0\.5{padding:0.125rem}.p-2{padding:0.5rem}.p-2\.5{padding:0.625rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-7{padding:1.75rem}.px-1{padding-left:0.25rem;padding-right:0.25rem}.px-1\.5{padding-left:0.375rem;padding-right:0.375rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.px-7{padding-left:1.75rem;padding-right:1.75rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-10{padding-top:2.5rem;padding-bottom:2.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-20{padding-top:5rem;padding-bottom:5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.pb-2{padding-bottom:0.5rem}.pb-20{padding-bottom:5rem}.pb-5{padding-bottom:1.25rem}.pb-6{padding-bottom:1.5rem}.pt-1{padding-top:0.25rem}.pt-14{padding-top:3.5rem}.pt-2{padding-top:0.5rem}.pt-3{padding-top:0.75rem}.pt-4{padding-top:1rem}.pt-5{padding-top:1.25rem}.text-center{text-align:center}.font-display{font-family:Plus Jakarta Sans, sans-serif}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.text-\[8px\]{font-size:8px}.text-\[9px\]{font-size:9px}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-extrabold{font-weight:800}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-\[1\.12\]{line-height:1.12}.leading-relaxed{line-height:1.625}.leading-tight{line-height:1.25}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.tracking-widest{letter-spacing:0.1em}.text-electric-500{--tw-text-opacity:1;color:rgb(59 130 246 / var(--tw-text-opacity, 1))}.text-emerald-300{--tw-text-opacity:1;color:rgb(110 231 183 / var(--tw-text-opacity, 1))}.text-emerald-400{--tw-text-opacity:1;color:rgb(52 211 153 / var(--tw-text-opacity, 1))}.text-navy-700{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-navy-950{--tw-text-opacity:1;color:rgb(7 11 20 / var(--tw-text-opacity, 1))}.text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.text-slate-100{--tw-text-opacity:1;color:rgb(241 245 249 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-50{--tw-text-opacity:1;color:rgb(248 250 252 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-transparent{color:transparent}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.placeholder-slate-500::placeholder{--tw-placeholder-opacity:1;color:rgb(100 116 139 / var(--tw-placeholder-opacity, 1))}.opacity-0{opacity:0}.opacity-75{opacity:0.75}.shadow-2xl{--tw-shadow:0 25px 50px -12px rgb(0 0 0 / 0.25);--tw-shadow-colored:0 25px 50px -12px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-inner{--tw-shadow:inset 0 2px 4px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:inset 0 2px 4px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-electric-600\/25{--tw-shadow-color:rgb(37 99 235 / 0.25);--tw-shadow:var(--tw-shadow-colored)}.shadow-sky-500\/20{--tw-shadow-color:rgb(14 165 233 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.shadow-sky-950\/60{--tw-shadow-color:rgb(8 47 73 / 0.6);--tw-shadow:var(--tw-shadow-colored)}.blur-\[120px\]{--tw-blur:blur(120px);filter:var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)}.backdrop-blur-lg{--tw-backdrop-blur:blur(16px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.backdrop-blur-xl{--tw-backdrop-blur:blur(24px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.selection\:bg-sky-400\/30 *::selection{background-color:rgb(56 189 248 / 0.3)}.selection\:text-sky-200 *::selection{--tw-text-opacity:1;color:rgb(186 230 253 / var(--tw-text-opacity, 1))}.selection\:bg-sky-400\/30::selection{background-color:rgb(56 189 248 / 0.3)}.selection\:text-sky-200::selection{--tw-text-opacity:1;color:rgb(186 230 253 / var(--tw-text-opacity, 1))}.hover\:border-sky-400:hover{--tw-border-opacity:1;border-color:rgb(56 189 248 / var(--tw-border-opacity, 1))}.hover\:border-sky-400\/40:hover{border-color:rgb(56 189 248 / 0.4)}.hover\:bg-electric-500:hover{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.hover\:bg-navy-700:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:bg-navy-800:hover{--tw-bg-opacity:1;background-color:rgb(22 32 56 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-300:hover{--tw-bg-opacity:1;background-color:rgb(125 211 252 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-400:hover{--tw-bg-opacity:1;background-color:rgb(56 189 248 / var(--tw-bg-opacity, 1))}.hover\:bg-sky-400\/20:hover{background-color:rgb(56 189 248 / 0.2)}.hover\:bg-sky-400\/25:hover{background-color:rgb(56 189 248 / 0.25)}.hover\:from-sky-300:hover{--tw-gradient-from:#7dd3fc var(--tw-gradient-from-position);--tw-gradient-to:rgb(125 211 252 / 0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from), var(--tw-gradient-to)}.hover\:to-electric-500:hover{--tw-gradient-to:#3B82F6 var(--tw-gradient-to-position)}.hover\:text-navy-950:hover{--tw-text-opacity:1;color:rgb(7 11 20 / var(--tw-text-opacity, 1))}.hover\:text-sky-300:hover{--tw-text-opacity:1;color:rgb(125 211 252 / var(--tw-text-opacity, 1))}.hover\:text-sky-400:hover{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}.hover\:text-slate-200:hover{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.hover\:text-white:hover{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.focus\:border-sky-400:focus{--tw-border-opacity:1;border-color:rgb(56 189 248 / var(--tw-border-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.group:hover .group-hover\:text-sky-400{--tw-text-opacity:1;color:rgb(56 189 248 / var(--tw-text-opacity, 1))}@media (min-width: 640px){.sm\:h-20{height:5rem}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:flex-row{flex-direction:row}.sm\:items-center{align-items:center}.sm\:p-6{padding:1.5rem}.sm\:p-7{padding:1.75rem}.sm\:p-8{padding:2rem}.sm\:p-9{padding:2.25rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:px-7{padding-left:1.75rem;padding-right:1.75rem}.sm\:py-28{padding-top:7rem;padding-bottom:7rem}.sm\:pb-32{padding-bottom:8rem}.sm\:pb-7{padding-bottom:1.75rem}.sm\:pt-24{padding-top:6rem}.sm\:text-3xl{font-size:1.875rem;line-height:2.25rem}.sm\:text-4xl{font-size:2.25rem;line-height:2.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-base{font-size:1rem;line-height:1.5rem}.sm\:text-lg{font-size:1.125rem;line-height:1.75rem}.sm\:text-sm{font-size:0.875rem;line-height:1.25rem}}@media (min-width: 768px){.md\:flex{display:flex}.md\:hidden{display:none}.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:flex-row{flex-direction:row}.md\:items-end{align-items:flex-end}}@media (min-width: 1024px){.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:max-w-none{max-width:none}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.lg\:gap-8{gap:2rem}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-\[3\.4rem\]{font-size:3.4rem}}</style></head>
+<body class="antialiased selection:bg-sky-400/30 selection:text-sky-200 customize-active">
+
+    <!-- Customize Mode Floating Banner (Hidden by default) -->
+    <div id="customize-banner" class="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 w-[92%] max-w-2xl bg-navy-850/95 backdrop-blur-xl border border-sky-400/50 rounded-2xl p-4 shadow-2xl shadow-sky-950/60 no-print">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <span class="flex h-3 w-3 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-400"></span>
+                </span>
+                <p class="text-xs sm:text-sm text-slate-200">
+                    <strong class="text-sky-400">Customize Mode Active:</strong> Click any highlighted text (Name, City, Email, Links) to edit directly.
+                </p>
+            </div>
+            <div class="flex items-center gap-2 shrink-0">
+                <button onclick="resetCustomData()" class="px-3 py-1.5 text-xs font-medium text-slate-300 hover:text-white bg-navy-800 hover:bg-navy-700 border border-navy-700 rounded-lg transition">
+                    Reset
+                </button>
+                <button onclick="window.print()" class="px-3 py-1.5 text-xs font-medium text-slate-200 hover:text-white bg-navy-800 hover:bg-navy-700 border border-navy-700 rounded-lg transition">
+                    Save PDF
+                </button>
+                <button onclick="toggleCustomizeMode()" class="px-3.5 py-1.5 text-xs font-semibold text-navy-950 bg-sky-400 hover:bg-sky-300 rounded-lg transition">
+                    Done
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed top-24 right-5 z-50 transform transition-all duration-300 pointer-events-none no-print translate-x-full opacity-0">
+        <div class="bg-navy-850 border border-sky-400/40 text-slate-100 px-4 py-3 rounded-xl shadow-xl flex items-center gap-3">
+            <svg class="w-5 h-5 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+            </svg>
+            <span id="toast-message" class="text-sm font-medium">Enable "Customize Mode" to link your LinkedIn URL.</span>
+        </div>
+    </div>
+
+    <!-- Sticky Glassmorphism Navigation -->
+    <header class="sticky top-0 z-40 bg-navy-900/80 backdrop-blur-lg border-b border-navy-700/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <!-- Brand / Name -->
+                <a href="#home" class="flex items-center gap-2.5 group">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-400 to-electric-600 flex items-center justify-center text-navy-950 font-display font-extrabold text-lg shadow-lg shadow-sky-500/20">
+                        P
+                    </div>
+                    <span data-editable="brandName" class="font-display font-bold text-lg tracking-tight text-slate-50 group-hover:text-sky-400 transition" contenteditable="true">
+                        [Your Name]
+                    </span>
+                </a>
+
+                <!-- Desktop Nav Links -->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#about" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition">About</a>
+                    <a href="#skills" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition">Capabilities</a>
+                    <a href="#projects" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition">Selected Work</a>
+                    <a href="#stack" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition">Tools &amp; Stack</a>
+                    <a href="#contact" class="text-sm font-medium text-slate-300 hover:text-sky-400 transition">Contact</a>
+                </nav>
+
+                <!-- Right Actions -->
+                <div class="hidden md:flex items-center gap-3 no-print">
+                    <button id="nav-customize-btn" onclick="toggleCustomizeMode()" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold text-sky-400 bg-sky-400/10 hover:bg-sky-400/20 border border-sky-400/30 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                        <span>Customize Info</span>
+                    </button>
+                    <a href="#contact" class="px-4 py-2 rounded-xl text-xs font-semibold bg-electric-600 hover:bg-electric-500 text-white shadow-lg shadow-electric-600/25 transition">
+                        Let's Connect
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Toggle -->
+                <div class="flex items-center gap-2 md:hidden no-print">
+                    <button onclick="toggleCustomizeMode()" aria-label="Customize Info" class="p-2.5 rounded-xl text-sky-400 bg-sky-400/10 border border-sky-400/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+                        </svg>
+                    </button>
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Menu" class="p-2.5 rounded-xl text-slate-300 hover:text-white bg-navy-850 border border-navy-700">
+                        <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-navy-850/95 backdrop-blur-xl border-b border-navy-700 px-4 pt-3 pb-6 space-y-2">
+            <a href="#about" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-sky-400 transition">About</a>
+            <a href="#skills" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-sky-400 transition">Capabilities</a>
+            <a href="#projects" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-sky-400 transition">Selected Work</a>
+            <a href="#stack" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-slate-200 hover:bg-navy-800 hover:text-sky-400 transition">Tools &amp; Stack</a>
+            <a href="#contact" onclick="closeMobileMenu()" class="block px-4 py-3 rounded-xl text-base font-medium text-sky-400 bg-sky-400/10 border border-sky-400/20">Get In Touch</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- 1. HERO SECTION -->
+        <section id="home" class="relative bg-grid pt-14 pb-20 sm:pt-24 sm:pb-32 overflow-hidden">
+            <!-- Ambient Radial Glows -->
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-electric-600/15 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-sky-400/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    <!-- Left Content -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <!-- Role Pill Badge -->
+                        <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-navy-850/90 border border-navy-700 shadow-inner">
+                            <span class="w-2 h-2 rounded-full bg-sky-400"></span>
+                            <span class="text-xs sm:text-sm font-medium text-sky-400 tracking-wide">
+                                UI/UX Product Designer • AI Creative Developer • Data &amp; Excel Specialist
+                            </span>
+                        </div>
+
+                        <!-- Greeting & Name -->
+                        <div class="space-y-3">
+                            <p class="text-slate-400 text-base sm:text-lg font-medium">
+                                Hello, I’m <span data-editable="heroName" class="text-slate-100 font-semibold px-1.5 py-0.5 rounded bg-navy-800/80 border border-navy-700" contenteditable="true">[Your Name]</span> — based in <span data-editable="city" class="text-slate-200" contenteditable="true">Lagos, Nigeria</span>.
+                            </p>
+                            <h1 class="font-display font-extrabold text-3xl sm:text-5xl lg:text-[3.4rem] leading-[1.12] tracking-tight text-slate-50">
+                                Designing intuitive products, <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-electric-500">AI-powered media</span>, and structured data systems.
+                            </h1>
+                        </div>
+
+                        <!-- Subheadline -->
+                        <p class="text-slate-400 text-base sm:text-lg leading-relaxed max-w-2xl">
+                            I help teams bridge user-centered product design, modern generative AI video and content workflows, and clear Microsoft Excel analytics—turning complex ideas and raw spreadsheets into usable solutions.
+                        </p>
+
+                        <!-- Action Buttons -->
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 no-print">
+                            <a href="#projects" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm sm:text-base bg-gradient-to-r from-sky-400 to-electric-600 hover:from-sky-300 hover:to-electric-500 text-navy-950 shadow-lg shadow-sky-500/20 transition">
+                                <span>View Selected Work</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </a>
+                            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm sm:text-base bg-navy-850 hover:bg-navy-800 text-slate-100 border border-navy-700 hover:border-sky-400/40 transition">
+                                <span>Get In Touch</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Abstract Multidisciplinary Visual Graphic -->
+                    <div class="lg:col-span-5">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <!-- Main Layered Architectural Card -->
+                            <div class="glass-card rounded-3xl p-6 sm:p-7 relative overflow-hidden">
+                                <div class="flex items-center justify-between pb-5 border-b border-navy-700/80">
+                                    <div class="flex items-center gap-2">
+                                        <span class="w-3 h-3 rounded-full bg-slate-700"></span>
+                                        <span class="w-3 h-3 rounded-full bg-slate-700"></span>
+                                        <span class="w-3 h-3 rounded-full bg-sky-400/70"></span>
+                                    </div>
+                                    <span class="text-[11px] font-mono uppercase tracking-widest text-slate-400">Multidisciplinary Stack</span>
+                                </div>
+
+                                <!-- Visual Layer 1: UI/UX System -->
+                                <div class="mt-5 p-4 rounded-2xl bg-navy-900/90 border border-navy-700/80 flex items-center justify-between gap-4">
+                                    <div class="flex items-center gap-3.5">
+                                        <div class="w-10 h-10 rounded-xl bg-sky-400/15 border border-sky-400/30 flex items-center justify-center text-sky-400 shrink-0">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-slate-100">UI/UX Architecture</div>
+                                            <div class="text-xs text-slate-400">Wireframes • Design Systems • Prototypes</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-mono text-sky-400 bg-sky-400/10 px-2.5 py-1 rounded-lg">Figma</span>
+                                </div>
+
+                                <!-- Visual Layer 2: AI Video & Media Pipeline -->
+                                <div class="mt-3.5 p-4 rounded-2xl bg-navy-900/90 border border-navy-700/80 flex items-center justify-between gap-4">
+                                    <div class="flex items-center gap-3.5">
+                                        <div class="w-10 h-10 rounded-xl bg-electric-500/15 border border-electric-500/30 flex items-center justify-center text-electric-500 shrink-0">
+                                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <div class="text-sm font-semibold text-slate-100">AI Video &amp; Workflows</div>
+                                            <div class="text-xs text-slate-400">Generative Video • Prompts • Voice Synthesis</div>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-mono text-electric-500 bg-electric-500/10 px-2.5 py-1 rounded-lg">Gen-AI</span>
+                                </div>
+
+                                <!-- Visual Layer 3: Excel & Data Matrix -->
+                                <div class="mt-3.5 p-4 rounded-2xl bg-navy-900/90 border border-navy-700/80">
+                                    <div class="flex items-center justify-between gap-4 mb-3">
+                                        <div class="flex items-center gap-3.5">
+                                            <div class="w-10 h-10 rounded-xl bg-emerald-400/10 border border-emerald-400/25 flex items-center justify-center text-emerald-400 shrink-0">
+                                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <div class="text-sm font-semibold text-slate-100">Data &amp; Excel Operations</div>
+                                                <div class="text-xs text-slate-400">XLOOKUP • Pivot Tables • KPI Dashboards</div>
+                                            </div>
+                                        </div>
+                                        <span class="text-xs font-mono text-emerald-400 bg-emerald-400/10 px-2.5 py-1 rounded-lg">Excel</span>
+                                    </div>
+                                    <!-- Abstract Mini Bar Visualization -->
+                                    <div class="grid grid-cols-6 gap-2 items-end h-12 pt-2 px-1">
+                                        <div class="bg-navy-700 rounded-t h-4"></div>
+                                        <div class="bg-sky-400/40 rounded-t h-7"></div>
+                                        <div class="bg-navy-700 rounded-t h-5"></div>
+                                        <div class="bg-electric-500/60 rounded-t h-9"></div>
+                                        <div class="bg-sky-400/70 rounded-t h-8"></div>
+                                        <div class="bg-sky-400 rounded-t h-11"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. ABOUT SECTION -->
+        <section id="about" class="py-20 sm:py-28 border-t border-navy-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                    <div class="lg:col-span-5 space-y-4">
+                        <span class="text-xs font-mono uppercase tracking-widest text-sky-400">01 / Overview</span>
+                        <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-50 leading-tight">
+                            Where thoughtful design meets AI speed and structured data.
+                        </h2>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-6">
+                        <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+                            Modern digital work rarely lives in a single silo. A great product interface needs clear user flows; brand communication increasingly relies on fast, high-impact AI video and visual production; and business operations depend on clean, reliable spreadsheets.
+                        </p>
+                        <p class="text-slate-400 text-base leading-relaxed">
+                            By combining <strong class="text-slate-200 font-medium">UI/UX Product Design</strong>, <strong class="text-slate-200 font-medium">AI Creative Development</strong>, and <strong class="text-slate-200 font-medium">Microsoft Excel &amp; Data Management</strong>, I offer practical, end-to-end execution—whether designing an app screen, producing a promotional AI video, or transforming messy records into an executive dashboard.
+                        </p>
+
+                        <!-- Three Value Pillars -->
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                            <div class="p-5 rounded-2xl bg-navy-850/70 border border-navy-700/80">
+                                <div class="text-sky-400 font-display font-bold text-base mb-1.5">Design Clarity</div>
+                                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                    Clean visual hierarchy and frictionless interfaces built around real user behavior.
+                                </p>
+                            </div>
+                            <div class="p-5 rounded-2xl bg-navy-850/70 border border-navy-700/80">
+                                <div class="text-sky-400 font-display font-bold text-base mb-1.5">AI Speed</div>
+                                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                    Rapid storyboarding, generative video creation, and repeatable prompt workflows.
+                                </p>
+                            </div>
+                            <div class="p-5 rounded-2xl bg-navy-850/70 border border-navy-700/80">
+                                <div class="text-sky-400 font-display font-bold text-base mb-1.5">Data Precision</div>
+                                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                                    Structured formulas, error-free data hygiene, and clear visual reporting.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. CORE SKILLS / CAPABILITIES SECTION -->
+        <section id="skills" class="py-20 sm:py-28 bg-navy-950/60 border-t border-navy-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-14 space-y-3">
+                    <span class="text-xs font-mono uppercase tracking-widest text-sky-400">02 / Core Capabilities</span>
+                    <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-50">
+                        Three complementary disciplines
+                    </h2>
+                    <p class="text-slate-400 text-base sm:text-lg">
+                        Structured capabilities designed to support product teams, digital campaigns, and daily business operations.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-7">
+                    <!-- Capability Card 1: UI/UX Product Design -->
+                    <div class="glass-card rounded-3xl p-7 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-sky-400/10 border border-sky-400/30 flex items-center justify-center text-sky-400 mb-6">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-50 mb-3">
+                                UI/UX Product Design
+                            </h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Crafting intuitive web and mobile experiences from initial user flows and wireframes to polished, interactive design systems.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-300 border-t border-navy-700/80 pt-5">
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>User Flows &amp; Information Architecture</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Low &amp; High-Fidelity Wireframing</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Interactive Figma Prototyping</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Component Libraries &amp; Responsive UI</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Capability Card 2: AI Creative & Video Development -->
+                    <div class="glass-card rounded-3xl p-7 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-electric-500/15 border border-electric-500/30 flex items-center justify-center text-electric-500 mb-6">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-50 mb-3">
+                                AI Creative &amp; Video Development
+                            </h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Leveraging generative AI tools to produce promotional videos, visual assets, voiceovers, and streamlined creative workflows.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-300 border-t border-navy-700/80 pt-5">
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>AI Video Generation &amp; Storyboarding</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Consistent Brand Visual &amp; Image Synthesis</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Structured Prompt Engineering</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>AI Voiceover &amp; Content Automation</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Capability Card 3: Microsoft Excel & Data Management -->
+                    <div class="glass-card rounded-3xl p-7 sm:p-8 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-2xl bg-sky-400/10 border border-sky-400/30 flex items-center justify-center text-sky-400 mb-6">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="font-display font-bold text-xl text-slate-50 mb-3">
+                                Excel &amp; Data Management
+                            </h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Organizing raw operational data into structured, automated spreadsheets and interactive KPI dashboards for clear decision-making.
+                            </p>
+                            <ul class="space-y-3 text-sm text-slate-300 border-t border-navy-700/80 pt-5">
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Data Cleaning, Validation &amp; Formatting</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Dynamic Formulas (XLOOKUP, INDEX/MATCH)</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Pivot Tables &amp; Interactive Slicers</span>
+                                </li>
+                                <li class="flex items-center gap-2.5">
+                                    <svg class="w-4 h-4 text-sky-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Automated Sales &amp; Inventory Dashboards</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FEATURED PROJECTS PREVIEW SECTION -->
+        <section id="projects" class="py-20 sm:py-28 border-t border-navy-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header & Filter Controls -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3">
+                            <span class="text-xs font-mono uppercase tracking-widest text-sky-400">03 / Featured Work</span>
+                            <span class="px-2.5 py-0.5 rounded-full text-[11px] font-medium bg-navy-800 text-slate-300 border border-navy-700">
+                                Sample Concept Showcases
+                            </span>
+                        </div>
+                        <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-50">
+                            Selected Projects &amp; Demonstrations
+                        </h2>
+                        <p class="text-slate-400 text-sm sm:text-base max-w-2xl">
+                            Explore sample case studies across UI/UX design, AI video creation, and Excel data modeling. Click any project to inspect the full workflow or attach your own live links.
+                        </p>
+                    </div>
+
+                    <!-- Interactive Filter Tabs -->
+                    <div class="flex flex-wrap items-center gap-2 no-print" role="tablist">
+                        <button onclick="filterProjects('all')" data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-sky-400 text-navy-950 transition">
+                            All Work
+                        </button>
+                        <button onclick="filterProjects('uiux')" data-filter="uiux" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-navy-850 text-slate-300 hover:text-white border border-navy-700 transition">
+                            UI/UX Design
+                        </button>
+                        <button onclick="filterProjects('aivideo')" data-filter="aivideo" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-navy-850 text-slate-300 hover:text-white border border-navy-700 transition">
+                            AI Video &amp; Media
+                        </button>
+                        <button onclick="filterProjects('excel')" data-filter="excel" class="filter-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-medium bg-navy-850 text-slate-300 hover:text-white border border-navy-700 transition">
+                            Excel &amp; Data
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    
+                    <!-- PROJECT 1: UI/UX Product Design -->
+                    <article data-category="uiux" class="project-card glass-card rounded-3xl overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <!-- Clean CSS/SVG Mobile Banking Mockup Preview -->
+                            <div class="h-56 bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950 p-5 border-b border-navy-700/80 relative overflow-hidden flex items-center justify-center">
+                                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-navy-950/80 border border-navy-700 text-[10px] font-mono text-sky-400">
+                                    SAMPLE CASE STUDY
+                                </div>
+                                <!-- Mini Phone Wireframe UI -->
+                                <div class="w-44 bg-navy-850 border border-navy-600/80 rounded-2xl p-3 shadow-2xl transform translate-y-2">
+                                    <div class="flex items-center justify-between mb-2.5">
+                                        <div class="w-12 h-2 bg-slate-600 rounded"></div>
+                                        <div class="w-4 h-4 rounded-full bg-sky-400/30 border border-sky-400"></div>
+                                    </div>
+                                    <div class="p-2.5 rounded-xl bg-gradient-to-r from-sky-400/20 to-electric-600/20 border border-sky-400/30 mb-2.5">
+                                        <div class="text-[9px] text-slate-400">Primary Wallet</div>
+                                        <div class="text-xs font-display font-bold text-slate-100 mt-0.5">₦ 485,200.00</div>
+                                    </div>
+                                    <div class="grid grid-cols-2 gap-1.5">
+                                        <div class="py-1.5 px-2 rounded-lg bg-sky-400 text-navy-950 text-[9px] font-bold text-center">Quick Send</div>
+                                        <div class="py-1.5 px-2 rounded-lg bg-navy-700 text-slate-200 text-[9px] font-medium text-center">Analytics</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-6 sm:p-7">
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <span class="text-xs font-semibold text-sky-400 uppercase tracking-wider">UI/UX Product Design</span>
+                                    <span class="text-xs text-slate-500 font-mono">Figma • Prototype</span>
+                                </div>
+                                <h3 class="font-display font-bold text-xl text-slate-50 mb-2.5">
+                                    FinFlow Mobile Banking Redesign
+                                </h3>
+                                <p class="text-sm text-slate-400 leading-relaxed mb-5">
+                                    A streamlined mobile transfer experience restructuring a cluttered 6-step payment journey into an accessible, 3-step user flow with high-contrast dark mode components.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 sm:px-7 pb-6 sm:pb-7 pt-2 flex items-center justify-between gap-3 border-t border-navy-800/80">
+                            <button onclick="openProjectModal('finflow')" class="w-full py-2.5 px-4 rounded-xl bg-navy-800 hover:bg-sky-400 text-slate-100 hover:text-navy-950 font-semibold text-xs sm:text-sm border border-navy-700 hover:border-sky-400 transition flex items-center justify-center gap-2">
+                                <span>View Case Study</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 2: AI Video Production -->
+                    <article data-category="aivideo" class="project-card glass-card rounded-3xl overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <!-- Clean CSS/SVG AI Video Storyboard Timeline Preview -->
+                            <div class="h-56 bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950 p-5 border-b border-navy-700/80 relative overflow-hidden flex flex-col justify-center">
+                                <div class="absolute top-3 left-3 px-2.5 py-1 rounded-md bg-navy-950/80 border border-navy-700 text-[10px] font-mono text-electric-500">
+                                    SAMPLE AI PRODUCTION
+                                </div>
+                                <!-- Storyboard Frames & Timeline -->
+                                <div class="mt-4 space-y-2.5">
+                                    <div class="grid grid-cols-3 gap-2">
+                                        <div class="h-16 rounded-xl bg-navy-850 border border-navy-600/80 p-2 flex flex-col justify-between">
+                                            <span class="text-[8px] font-mono text-sky-400">SCENE 01</span>
+                                            <div class="w-full h-1.5 bg-electric-500/50 rounded"></div>
+                                        </div>
+                                        <div class="h-16 rounded-xl bg-navy-850 border border-sky-400/50 p-2 flex flex-col justify-between relative">
+                                            <span class="text-[8px] font-mono text-sky-400">SCENE 02</span>
+                                            <div class="w-6 h-6 rounded-full bg-sky-400/20 border border-sky-400 flex items-center justify-center mx-auto">
+                                                <div class="w-0 h-0 border-t-[4px] border-t-transparent border-l-[7px] border-l-sky-400 border-b-[4px] border-b-transparent ml-0.5"></div>
+                                            </div>
+                                        </div>
+                                        <div class="h-16 rounded-xl bg-navy-850 border border-navy-600/80 p-2 flex flex-col justify-between">
+                                            <span class="text-[8px] font-mono text-sky-400">SCENE 03</span>
+                                            <div class="w-3/4 h-1.5 bg-sky-400/50 rounded"></div>
+                                        </div>
+                                    </div>
+                                    <!-- Timeline Scrubber -->
+                                    <div class="bg-navy-950/90 border border-navy-700 rounded-lg p-2">
+                                        <div class="flex justify-between text-[8px] font-mono text-slate-400 mb-1">
+                                            <span>00:14:08</span>
+                                            <span>4K AI RENDER • VOICE SYNC</span>
+                                        </div>
+                                        <div class="w-full h-1.5 bg-navy-800 rounded-full overflow-hidden">
+                                            <div class="w-2/3 h-full bg-gradient-to-r from-sky-400 to-electric-500"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-6 sm:p-7">
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <span class="text-xs font-semibold text-electric-500 uppercase tracking-wider">AI Video &amp; Media</span>
+                                    <span class="text-xs text-slate-500 font-mono">Runway • ElevenLabs</span>
+                                </div>
+                                <h3 class="font-display font-bold text-xl text-slate-50 mb-2.5">
+                                    NexaTech Product Launch Reel
+                                </h3>
+                                <p class="text-sm text-slate-400 leading-relaxed mb-5">
+                                    End-to-end AI commercial production combining structured prompt engineering, consistent visual scene generation, natural AI voiceover synthesis, and motion pacing.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 sm:px-7 pb-6 sm:pb-7 pt-2 flex items-center justify-between gap-3 border-t border-navy-800/80">
+                            <button onclick="openProjectModal('nexatech')" class="w-full py-2.5 px-4 rounded-xl bg-navy-800 hover:bg-sky-400 text-slate-100 hover:text-navy-950 font-semibold text-xs sm:text-sm border border-navy-700 hover:border-sky-400 transition flex items-center justify-center gap-2">
+                                <span>View Case Study</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </button>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 3: Excel & Data Dashboard -->
+                    <article data-category="excel" class="project-card glass-card rounded-3xl overflow-hidden flex flex-col justify-between">
+                        <div>
+                            <!-- Clean Interactive Mini Excel Dashboard Preview -->
+                            <div class="h-56 bg-gradient-to-br from-navy-800 via-navy-900 to-navy-950 p-5 border-b border-navy-700/80 relative overflow-hidden flex flex-col justify-between">
+                                <div class="flex items-center justify-between">
+                                    <span class="px-2.5 py-1 rounded-md bg-navy-950/80 border border-navy-700 text-[10px] font-mono text-emerald-400">
+                                        SAMPLE EXCEL MODEL
+                                    </span>
+                                    <!-- Interactive Mini Toggle -->
+                                    <div class="flex rounded-lg bg-navy-950 border border-navy-700 p-0.5 text-[10px] no-print">
+                                        <button onclick="switchMiniChart('q1')" id="mini-q1" class="px-2 py-0.5 rounded bg-sky-400 text-navy-950 font-bold transition">Q1</button>
+                                        <button onclick="switchMiniChart('q2')" id="mini-q2" class="px-2 py-0.5 rounded text-slate-400 hover:text-white transition">Q2</button>
+                                    </div>
+                                </div>
+
+                                <!-- Mini Spreadsheet & Chart Widget -->
+                                <div class="bg-navy-850/95 border border-navy-700 rounded-xl p-3 mt-2">
+                                    <div class="grid grid-cols-3 gap-2 pb-2 mb-2 border-b border-navy-700/80 text-[10px]">
+                                        <div>
+                                            <div class="text-slate-400">SKU Records</div>
+                                            <div id="mini-sku" class="font-mono font-bold text-slate-100">1,240 Rows</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-slate-400">Stock Health</div>
+                                            <div id="mini-health" class="font-mono font-bold text-emerald-400">98.4% Clean</div>
+                                        </div>
+                                        <div>
+                                            <div class="text-slate-400">Lookup Mode</div>
+                                            <div class="font-mono font-bold text-sky-400">XLOOKUP</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-end gap-2 h-14 pt-1">
+                                        <div id="bar-1" class="flex-1 bg-sky-400/50 rounded-t transition-all duration-300" style="height: 55%"></div>
+                                        <div id="bar-2" class="flex-1 bg-electric-500/70 rounded-t transition-all duration-300" style="height: 75%"></div>
+                                        <div id="bar-3" class="flex-1 bg-sky-400/80 rounded-t transition-all duration-300" style="height: 60%"></div>
+                                        <div id="bar-4" class="flex-1 bg-emerald-400/80 rounded-t transition-all duration-300" style="height: 90%"></div>
+                                        <div id="bar-5" class="flex-1 bg-sky-400 rounded-t transition-all duration-300" style="height: 82%"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="p-6 sm:p-7">
+                                <div class="flex items-center justify-between gap-2 mb-3">
+                                    <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">Excel &amp; Data Management</span>
+                                    <span class="text-xs text-slate-500 font-mono">XLOOKUP • Pivots</span>
+                                </div>
+                                <h3 class="font-display font-bold text-xl text-slate-50 mb-2.5">
+                                    Retail Sales &amp; Inventory Tracker
+                                </h3>
+                                <p class="text-sm text-slate-400 leading-relaxed mb-5">
+                                    Multi-sheet workbook architecture consolidating raw inventory logs, automated reorder alerts, and dynamic Pivot Table dashboards for weekly sales tracking.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 sm:px-7 pb-6 sm:pb-7 pt-2 flex items-center justify-between gap-3 border-t border-navy-800/80">
+                            <button onclick="openProjectModal('retail')" class="w-full py-2.5 px-4 rounded-xl bg-navy-800 hover:bg-sky-400 text-slate-100 hover:text-navy-950 font-semibold text-xs sm:text-sm border border-navy-700 hover:border-sky-400 transition flex items-center justify-center gap-2">
+                                <span>View Case Study</span>
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. TOOLS & STACK SECTION -->
+        <section id="stack" class="py-20 sm:py-28 bg-navy-950/60 border-t border-navy-800/80">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mb-14 space-y-3">
+                    <span class="text-xs font-mono uppercase tracking-widest text-sky-400">04 / Tools &amp; Ecosystem</span>
+                    <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-50">
+                        Software &amp; AI Platforms
+                    </h2>
+                    <p class="text-slate-400 text-base">
+                        The primary design, generative AI, and spreadsheet tools used across daily workflows.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Category 1: Product & UI/UX -->
+                    <div class="p-6 rounded-3xl bg-navy-850/50 border border-navy-700/80 space-y-4">
+                        <div class="text-xs font-mono uppercase tracking-wider text-sky-400 font-semibold">
+                            Design &amp; Prototyping
+                        </div>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">Figma</span>
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">Framer</span>
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">Adobe XD</span>
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">FigJam</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 2: Generative AI & Video -->
+                    <div class="p-6 rounded-3xl bg-navy-850/50 border border-navy-700/80 space-y-4">
+                        <div class="text-xs font-mono uppercase tracking-wider text-electric-500 font-semibold">
+                            AI Video &amp; Content Creation
+                        </div>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">Runway</span>
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">Midjourney</span>
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">Kling / Sora</span>
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">ElevenLabs</span>
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">ChatGPT / Claude</span>
+                        </div>
+                    </div>
+
+                    <!-- Category 3: Spreadsheets & BI -->
+                    <div class="p-6 rounded-3xl bg-navy-850/50 border border-navy-700/80 space-y-4">
+                        <div class="text-xs font-mono uppercase tracking-wider text-emerald-400 font-semibold">
+                            Data &amp; Spreadsheets
+                        </div>
+                        <div class="flex flex-wrap gap-2.5">
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">Microsoft Excel</span>
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">Google Sheets</span>
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">Power BI</span>
+                            <span class="px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-sm font-medium text-slate-200">Power Query</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. CONTACT SECTION -->
+        <section id="contact" class="py-20 sm:py-28 border-t border-navy-800/80 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <!-- Left Direct Contact Info -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <span class="text-xs font-mono uppercase tracking-widest text-sky-400">05 / Get In Touch</span>
+                        <h2 class="font-display font-bold text-2xl sm:text-4xl text-slate-50 leading-tight">
+                            Available for product design, AI video, and data projects.
+                        </h2>
+                        <p class="text-slate-400 text-base leading-relaxed">
+                            Looking to collaborate on a user interface, produce AI-driven video assets, or organize operational spreadsheets? Reach out directly via email or send a message below.
+                        </p>
+
+                        <!-- Copyable Email Card -->
+                        <div class="p-5 rounded-2xl bg-navy-850 border border-navy-700 space-y-3">
+                            <div class="text-xs font-mono uppercase tracking-wider text-slate-400">Direct Email</div>
+                            <div class="flex items-center justify-between gap-3">
+                                <span id="contact-email-text" data-editable="email" class="text-sm sm:text-base font-semibold text-slate-100 truncate" contenteditable="true">
+                                    your.email@exmple.com
+                                </span>
+                                <button onclick="copyEmail()" class="px-3.5 py-2 rounded-xl bg-sky-400/15 hover:bg-sky-400/25 text-sky-400 border border-sky-400/30 text-xs font-semibold shrink-0 transition flex items-center gap-1.5 no-print">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+                                    <span>Copy</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Portfolio & Social Link Placeholders -->
+                        <div class="space-y-2.5 pt-2">
+                            <div class="text-xs font-mono uppercase tracking-wider text-slate-400">External Profiles &amp; Files</div>
+                            <div class="flex flex-wrap gap-3">
+                                <a href="#contact" onclick="handlePlaceholderLink(event, 'LinkedIn')" class="px-4 py-2.5 rounded-xl bg-navy-850 hover:bg-navy-800 border border-navy-700 hover:border-sky-400/40 text-xs font-semibold text-slate-200 transition">
+                                    LinkedIn Profile ↗
+                                </a>
+                                <a href="#contact" onclick="handlePlaceholderLink(event, 'Behance / Figma')" class="px-4 py-2.5 rounded-xl bg-navy-850 hover:bg-navy-800 border border-navy-700 hover:border-sky-400/40 text-xs font-semibold text-slate-200 transition">
+                                    Behance / Figma ↗
+                                </a>
+                                <a href="#contact" onclick="handlePlaceholderLink(event, 'Google Drive / Video Reel')" class="px-4 py-2.5 rounded-xl bg-navy-850 hover:bg-navy-800 border border-navy-700 hover:border-sky-400/40 text-xs font-semibold text-slate-200 transition">
+                                    AI Reel &amp; Drive ↗
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Contact Message Form -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-card rounded-3xl p-6 sm:p-9">
+                            <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-5">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label for="sender-name" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Your Name</label>
+                                        <input type="text" id="sender-name" required="" placeholder="e.g. Tunde Adeyemi" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-sky-400 transition">
+                                    </div>
+                                    <div>
+                                        <label for="sender-email" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Email Address</label>
+                                        <input type="email" id="sender-email" required="" placeholder="name@company.com" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-sky-400 transition">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="project-type" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Area of Interest</label>
+                                    <select id="project-type" class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-slate-100 text-sm focus:outline-none focus:border-sky-400 transition">
+                                        <option value="UI/UX Product Design">UI/UX Product Design</option>
+                                        <option value="AI Video &amp; Creative Production">AI Video &amp; Creative Production</option>
+                                        <option value="Microsoft Excel &amp; Data Management">Microsoft Excel &amp; Data Management</option>
+                                        <option value="Multidisciplinary / Full Role">Multidisciplinary / Combined Project</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label for="sender-message" class="block text-xs font-semibold uppercase tracking-wider text-slate-300 mb-2">Project Details or Message</label>
+                                    <textarea id="sender-message" rows="4" required="" placeholder="Briefly describe what you're looking to build, produce, or organize..." class="w-full px-4 py-3 rounded-xl bg-navy-900 border border-navy-700 text-slate-100 placeholder-slate-500 text-sm focus:outline-none focus:border-sky-400 transition"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full py-3.5 px-6 rounded-xl font-semibold text-sm bg-gradient-to-r from-sky-400 to-electric-600 hover:from-sky-300 hover:to-electric-500 text-navy-950 shadow-lg shadow-sky-500/20 transition">
+                                    Send Inquiry
+                                </button>
+
+                                <!-- Confirmation Box -->
+                                <div id="form-confirmation" class="hidden p-4 rounded-xl bg-emerald-500/10 border border-emerald-400/30 text-emerald-300 text-sm">
+                                    Thank you! Your message has been prepared. You can also copy the email address on the left for immediate correspondence.
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="border-t border-navy-800 bg-navy-950 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-xs sm:text-sm text-slate-400">
+                © <span id="current-year">2026</span> <span data-editable="footerName" class="text-slate-200 font-medium" contenteditable="true">[Your Name]</span>. UI/UX Design • AI Creative • Data Operations.
+            </div>
+            <div class="flex items-center gap-4 no-print">
+                <button onclick="toggleCustomizeMode()" class="text-xs font-medium text-sky-400 hover:text-sky-300 transition">
+                    Toggle Customize Mode
+                </button>
+                <span class="text-navy-700">|</span>
+                <a href="#home" class="text-xs font-medium text-slate-400 hover:text-slate-200 transition">
+                    Back to Top ↑
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CASE STUDY DETAIL MODAL -->
+    <div id="project-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-navy-950/85 backdrop-blur-md p-4 sm:p-6 flex items-center justify-center no-print">
+        <div class="bg-navy-850 border border-navy-700 rounded-3xl max-w-2xl w-full p-6 sm:p-8 shadow-2xl relative my-8">
+            <!-- Close Button -->
+            <button onclick="closeProjectModal()" aria-label="Close Modal" class="absolute top-5 right-5 p-2 rounded-xl bg-navy-800 hover:bg-navy-700 text-slate-300 hover:text-white border border-navy-700 transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="space-y-6">
+                <div>
+                    <span id="modal-category" class="text-xs font-mono uppercase tracking-widest text-sky-400">Category</span>
+                    <h3 id="modal-title" class="font-display font-bold text-2xl sm:text-3xl text-slate-50 mt-1">Project Title</h3>
+                    <p class="text-xs text-slate-400 mt-1">Sample / Concept Showcase — Customize the link below with your own live file.</p>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="p-4 rounded-2xl bg-navy-900 border border-navy-700/80">
+                        <div class="text-xs font-semibold uppercase tracking-wider text-sky-400 mb-1.5">The Objective / Problem</div>
+                        <p id="modal-problem" class="text-sm text-slate-300 leading-relaxed"></p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-navy-900 border border-navy-700/80">
+                        <div class="text-xs font-semibold uppercase tracking-wider text-sky-400 mb-1.5">Process &amp; Execution</div>
+                        <p id="modal-process" class="text-sm text-slate-300 leading-relaxed"></p>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-2xl bg-navy-900 border border-navy-700/80">
+                    <div class="text-xs font-semibold uppercase tracking-wider text-sky-400 mb-2">Key Deliverables</div>
+                    <ul id="modal-deliverables" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-slate-300"></ul>
+                </div>
+
+                <div>
+                    <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Tools &amp; Methods Used</div>
+                    <div id="modal-tools" class="flex flex-wrap gap-2"></div>
+                </div>
+
+                <!-- Editable Project Link Field -->
+                <div class="p-4 rounded-2xl bg-navy-950 border border-navy-700 space-y-2">
+                    <label for="modal-link-input" class="block text-xs font-semibold text-slate-300">
+                        Your Project Link (Figma, Google Drive, YouTube, or Excel File)
+                    </label>
+                    <div class="flex flex-col sm:flex-row gap-2">
+                        <input type="url" id="modal-link-input" placeholder="https://..." class="flex-1 px-3.5 py-2 rounded-xl bg-navy-900 border border-navy-700 text-xs sm:text-sm text-slate-100 focus:outline-none focus:border-sky-400">
+                        <button onclick="saveProjectLink()" class="px-4 py-2 rounded-xl bg-sky-400 hover:bg-sky-300 text-navy-950 font-semibold text-xs sm:text-sm transition shrink-0">
+                            Save Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Project Case Study Data Store
+        const projectData = {
+            finflow: {
+                category: 'UI/UX Product Design',
+                title: 'FinFlow Mobile Banking Redesign',
+                problem: 'Users faced friction during peer-to-peer transfers due to dense screens, unclear confirmation steps, and low-contrast visual hierarchy.',
+                process: 'Mapped end-to-end user flows, built low-fidelity wireframes to simplify navigation, and created a modular dark-mode UI kit with interactive Figma prototypes.',
+                deliverables: [
+                    'User Flow & Wireframe Blueprint',
+                    'High-Fidelity Mobile UI Screens',
+                    'Interactive Clickable Prototype',
+                    'Reusable Color & Typography Tokens'
+                ],
+                tools: ['Figma', 'User Flows', 'Wireframing', 'Design Systems', 'Prototyping'],
+                defaultLink: 'https://www.figma.com'
+            },
+            nexatech: {
+                category: 'AI Creative & Video Development',
+                title: 'NexaTech Product Launch Reel',
+                problem: 'A fast-moving product launch required an engaging promotional video without the long turnaround time of traditional studio filming.',
+                process: 'Structured a scene-by-scene visual script, engineered consistent AI video prompts, synthesized natural voiceover narration, and assembled the final cut.',
+                deliverables: [
+                    'Scene-by-Scene AI Storyboard',
+                    'Consistent Generative Video Clips',
+                    'AI Voiceover & Audio Pacing',
+                    '16:9 & 9:16 Social Export Formats'
+                ],
+                tools: ['Runway', 'Midjourney', 'Kling / Sora', 'ElevenLabs', 'Prompt Engineering'],
+                defaultLink: 'https://drive.google.com'
+            },
+            retail: {
+                category: 'Microsoft Excel & Data Management',
+                title: 'Retail Sales & Inventory Tracker',
+                problem: 'Scattered sales logs and inconsistent product naming made weekly stock checks and revenue summaries slow and prone to manual errors.',
+                process: 'Standardized raw CSV exports, applied data validation rules, built XLOOKUP relationships across tabs, and designed an interactive Pivot dashboard.',
+                deliverables: [
+                    'Cleaned Master Product & Sales Tables',
+                    'Automated XLOOKUP & Conditional Alerts',
+                    'Interactive Pivot Table KPI Dashboard',
+                    'Dynamic Slicers for Category Filtering'
+                ],
+                tools: ['Microsoft Excel', 'XLOOKUP', 'Pivot Tables', 'Data Cleaning', 'KPI Dashboards'],
+                defaultLink: 'https://onedrive.live.com'
+            }
+        };
+
+        let activeModalProjectKey = null;
+        let isCustomizeMode = false;
+
+        // Toast Notification Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            toast.classList.remove('translate-x-full', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-x-full', 'opacity-0');
+            }, 3000);
+        }
+
+        // Mobile Navigation Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+            menu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        }
+
+        function closeMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const openIcon = document.getElementById('menu-icon-open');
+            const closeIcon = document.getElementById('menu-icon-close');
+            menu.classList.add('hidden');
+            openIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+        }
+
+        // Project Category Filtering
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                if (btn.dataset.filter === category) {
+                    btn.classList.remove('bg-navy-850', 'text-slate-300', 'border', 'border-navy-700');
+                    btn.classList.add('bg-sky-400', 'text-navy-950', 'font-semibold');
+                } else {
+                    btn.classList.remove('bg-sky-400', 'text-navy-950', 'font-semibold');
+                    btn.classList.add('bg-navy-850', 'text-slate-300', 'border', 'border-navy-700');
+                }
+            });
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // Interactive Mini Excel Chart Toggle on Card 3
+        function switchMiniChart(quarter) {
+            const q1Btn = document.getElementById('mini-q1');
+            const q2Btn = document.getElementById('mini-q2');
+            const skuEl = document.getElementById('mini-sku');
+            const healthEl = document.getElementById('mini-health');
+            const bars = [
+                document.getElementById('bar-1'),
+                document.getElementById('bar-2'),
+                document.getElementById('bar-3'),
+                document.getElementById('bar-4'),
+                document.getElementById('bar-5')
+            ];
+
+            if (quarter === 'q1') {
+                q1Btn.className = 'px-2 py-0.5 rounded bg-sky-400 text-navy-950 font-bold transition';
+                q2Btn.className = 'px-2 py-0.5 rounded text-slate-400 hover:text-white transition';
+                skuEl.textContent = '1,240 Rows';
+                healthEl.textContent = '98.4% Clean';
+                const heights = ['55%', '75%', '60%', '90%', '82%'];
+                bars.forEach((bar, i) => bar.style.height = heights[i]);
+            } else {
+                q2Btn.className = 'px-2 py-0.5 rounded bg-sky-400 text-navy-950 font-bold transition';
+                q1Btn.className = 'px-2 py-0.5 rounded text-slate-400 hover:text-white transition';
+                skuEl.textContent = '1,580 Rows';
+                healthEl.textContent = '99.2% Clean';
+                const heights = ['70%', '65%', '88%', '78%', '96%'];
+                bars.forEach((bar, i) => bar.style.height = heights[i]);
+            }
+        }
+
+        // Case Study Modal Functions
+        function openProjectModal(projectKey) {
+            const data = projectData[projectKey];
+            if (!data) return;
+            activeModalProjectKey = projectKey;
+
+            document.getElementById('modal-category').textContent = data.category;
+            document.getElementById('modal-title').textContent = data.title;
+            document.getElementById('modal-problem').textContent = data.problem;
+            document.getElementById('modal-process').textContent = data.process;
+
+            const delivList = document.getElementById('modal-deliverables');
+            delivList.innerHTML = data.deliverables.map(item => `
+                <li class="flex items-center gap-2">
+                    <span class="w-1.5 h-1.5 rounded-full bg-sky-400 shrink-0"></span>
+                    <span>${item}</span>
+                </li>
+            `).join('');
+
+            const toolsList = document.getElementById('modal-tools');
+            toolsList.innerHTML = data.tools.map(tool => `
+                <span class="px-3 py-1 rounded-lg bg-navy-800 border border-navy-700 text-xs font-medium text-slate-200">${tool}</span>
+            `).join('');
+
+            // Load saved link from localStorage if available
+            const savedLink = localStorage.getItem('portfolio_link_' + projectKey) || data.defaultLink;
+            document.getElementById('modal-link-input').value = savedLink;
+
+            document.getElementById('project-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            document.getElementById('project-modal').classList.add('hidden');
+            document.body.style.overflow = '';
+            activeModalProjectKey = null;
+        }
+
+        function saveProjectLink() {
+            if (!activeModalProjectKey) return;
+            const val = document.getElementById('modal-link-input').value.trim();
+            if (val) {
+                localStorage.setItem('portfolio_link_' + activeModalProjectKey, val);
+                showToast('Project link saved locally!');
+            }
+        }
+
+        // Close modal when clicking backdrop
+        document.getElementById('project-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeProjectModal();
+            }
+        });
+
+        // Copy Email to Clipboard (using document.execCommand for iframe compatibility)
+        function copyEmail() {
+            const emailText = document.getElementById('contact-email-text').textContent.trim();
+            const tempInput = document.createElement('textarea');
+            tempInput.value = emailText;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            try {
+                document.execCommand('copy');
+                showToast('Email copied: ' + emailText);
+            } catch (err) {
+                showToast('Could not copy automatically. Please select and copy.');
+            }
+            document.body.removeChild(tempInput);
+        }
+
+        // Placeholder Social Link Handler
+        function handlePlaceholderLink(e, platformName) {
+            e.preventDefault();
+            showToast('Enable "Customize Mode" to link your ' + platformName + ' URL.');
+        }
+
+        // Contact Form Submission
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            const confirmation = document.getElementById('form-confirmation');
+            confirmation.classList.remove('hidden');
+            showToast('Inquiry message recorded!');
+            e.target.reset();
+        }
+
+        // Customize Mode (Inline Editing + LocalStorage Persistence)
+        function toggleCustomizeMode() {
+            isCustomizeMode = !isCustomizeMode;
+            const body = document.body;
+            const banner = document.getElementById('customize-banner');
+            const editables = document.querySelectorAll('[data-editable]');
+
+            if (isCustomizeMode) {
+                body.classList.add('customize-active');
+                banner.classList.remove('hidden');
+                editables.forEach(el => {
+                    el.setAttribute('contenteditable', 'true');
+                });
+                showToast('Customize Mode enabled. Click highlighted fields to edit.');
+            } else {
+                body.classList.remove('customize-active');
+                banner.classList.add('hidden');
+                editables.forEach(el => {
+                    el.removeAttribute('contenteditable');
+                    localStorage.setItem('portfolio_field_' + el.dataset.editable, el.textContent.trim());
+                });
+                showToast('Changes saved to your browser!');
+            }
+        }
+
+        // Sync Name Fields Automatically When Edited
+        document.querySelectorAll('[data-editable]').forEach(el => {
+            el.addEventListener('input', () => {
+                const key = el.dataset.editable;
+                const val = el.textContent;
+                localStorage.setItem('portfolio_field_' + key, val.trim());
+
+                // Keep name instances synchronized across header, hero, and footer
+                if (key === 'brandName' || key === 'heroName' || key === 'footerName') {
+                    ['brandName', 'heroName', 'footerName'].forEach(syncKey => {
+                        if (syncKey !== key) {
+                            const target = document.querySelector(`[data-editable="${syncKey}"]`);
+                            if (target) target.textContent = val;
+                            localStorage.setItem('portfolio_field_' + syncKey, val.trim());
+                        }
+                    });
+                }
+            });
+        });
+
+        // Load Saved Customizations on Page Load
+        window.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('[data-editable]').forEach(el => {
+                const saved = localStorage.getItem('portfolio_field_' + el.dataset.editable);
+                if (saved) {
+                    el.textContent = saved;
+                }
+            });
+        });
+
+        // Reset Custom Data
+        function resetCustomData() {
+            const defaults = {
+                brandName: '[Your Name]',
+                heroName: '[Your Name]',
+                footerName: '[Your Name]',
+                city: 'Lagos, Nigeria',
+                email: 'your.email@example.com'
+            };
+            Object.keys(defaults).forEach(key => {
+                localStorage.removeItem('portfolio_field_' + key);
+                const el = document.querySelector(`[data-editable="${key}"]`);
+                if (el) el.textContent = defaults[key];
+            });
+            ['finflow', 'nexatech', 'retail'].forEach(k => localStorage.removeItem('portfolio_link_' + k));
+            showToast('Portfolio reset to default placeholders.');
+        }
+    </script>
+
+</body></html>
